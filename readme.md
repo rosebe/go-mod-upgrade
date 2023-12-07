@@ -30,17 +30,30 @@ Pre-compiled binaries for Windows, OS X and Linux are available in the [releases
 Alternatively, with the Go toolchain, you can do
 
 ```
-$ go install github.com/oligot/go-mod-upgrade@latest
+go install github.com/oligot/go-mod-upgrade@latest
 ```
 
 ## Usage
 
 In a Go project which uses modules, you can now run
 ```
-$ go-mod-upgrade
+go-mod-upgrade
 ```
 
 Colors in module names help identify the update type:
 * green for a minor update
 * yellow for a patch update
 * red for a prerelease update
+
+Additional options can be specified via the CLI global options:
+
+``` 
+GLOBAL OPTIONS:
+   --pagesize value, -p value  Specify page size (default: 10)
+   --force, -f                 Force update all modules in non-interactive mode (default: false)
+   --verbose, -v               Verbose mode (default: false)
+   --hook value                Hook to execute for each updated module
+   --ignore value, -i value    Ignore modules matching the given regular expression
+   --help, -h                  show help (default: false)
+   --version                   print the version (default: false)
+```
